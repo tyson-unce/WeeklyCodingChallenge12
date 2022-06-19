@@ -23,5 +23,6 @@ VALUES ('Diary of a Wimpy Kid','2007-04-01', 'Jeff Kinney');
 INSERT INTO easy (title,Publish_date,Author_name)
 VALUES ('Hunger Games','2001-04-26', 'Eoin Colfer');
 
-DROP * FROM easy WHERE Publish_date = '2001-04-26'
+DELETE FROM easy WHERE Publish_date = '2001-04-26';
     
+
