@@ -21,8 +21,26 @@ INSERT INTO easy (title,Publish_date,Author_name)
 VALUES ('Diary of a Wimpy Kid','2007-04-01', 'Jeff Kinney');
 
 INSERT INTO easy (title,Publish_date,Author_name)
-VALUES ('Hunger Games','2001-04-26', 'Eoin Colfer');
+VALUES ('Artemis Fowl','2001-04-26', 'Eoin Colfer');
 
-DELETE FROM easy WHERE Publish_date = '2001-04-26';
-    
+INSERT INTO easy (title,Publish_date,Author_name)
+VALUES ('We Ate the Acid','2018-12-04', 'Joe Roberts');
+
+INSERT INTO easy (title,Publish_date,Author_name)
+VALUES ('A thing between us','2021-10-12', 'Gus Moreno');
+
+DELETE FROM easy WHERE Publish_date = MIN(Date);
+
+SELECT COUNT(Title)
+from easy;
+
+delete from easy
+where easy.publish_date =(
+    select oldest from (select Min(publish_date) as oldest from easy )
+    as deleteoldest
+    limit 1);
+
+#UPDATE easy
+#SET Publish_date = '2021-10-12'
+#WHERE  Title = 'A thing between us';
 
