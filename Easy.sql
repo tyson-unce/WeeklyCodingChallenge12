@@ -34,11 +34,11 @@ DELETE FROM easy WHERE Publish_date = MIN(Date);
 SELECT COUNT(Title)
 from easy;
 
+
+    
 delete from easy
-where easy.publish_date =(
-    select oldest from (select Min(publish_date) as oldest from easy )
-    as deleteoldest
-    limit 1);
+order by publish_date
+limit 1;
 
 #UPDATE easy
 #SET Publish_date = '2021-10-12'
