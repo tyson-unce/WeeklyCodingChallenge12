@@ -41,3 +41,8 @@ WHERE model = 'Corolla';
 
 ALTER TABLE very_easy ADD COLUMN same_make VARCHAR(100);
 UPDATE very_easy SET same_make = CONCAT(make, ' ', model);
+
+SELECT make, Count(make)
+FROM very_easy
+GROUP BY make
+HAVING COUNT(make) > 1;
